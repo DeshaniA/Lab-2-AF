@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //function getValue(){
+          //  let value =0;
+            //return new Promise(resolve => {
+              //  value = 10;
+                //setTimeout(() => {
+                  //  resolve(value)
+               // },2000);
+           // });
+        //}
+
+
+        //getvalue.then(function (value) {
+          //  console.log(value)
+        //});
+
+        //async function print(){
+          //  let v = await getValue();
+            //console.log(v);
+            //console.log("see it's asyncronous");
+        //}
+
+        //print();
+        //console.log("it skipped");
+
+        class Vehicle{
+            static VEHICLECOUNT = 0;
+            constructor(type)
+            {
+                Vehicle.VEHICLECOUNT++;
+                this.type = type;
+
+            }
+            drive(){
+                console.log(this.type+" is driving");
+                console.log(Vehicle.VEHICLECOUNT);
+        }
+        }
+
+        let vehicle = new Vehicle("Toyota");
+        vehicle.drive();
+
+        class Car extends Vehicle{
+            constructor(type) {
+                super(type);
+            }
+            balanceWheels(){
+                console.log(this.type+ " Wheels are balance");
+                console.log(Vehicle.VEHICLECOUNT);
+            }
+            setColor(color){
+                this.color = color;
+
+            }
+        }
+
+        let car = new Car("Honda");
+        car.balanceWheels();
+        car.drive();
+        car.color = "red";
+        console.log(car.color);
+        console.log(vehicle);
+        console.log(car);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
